@@ -9,9 +9,10 @@ filtered = ['192.168', '10', '255.255.255.255']
 
 LOGFILE = '/var/log/access.log'
 USERS_FILE = '/etc/captive.users'
+PACKET_LOG = '/var/log/ulog/packet.log'
 
 logfile = open(LOGFILE, 'a')
-f = subprocess.Popen(['/usr/bin/tail','-F','/var/log/ulog/syslogemu.log'],\
+f = subprocess.Popen(['/usr/bin/tail','-F',PACKET_LOG],\
         stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 while True:
     usersFile = open(USERS_FILE, 'r')
