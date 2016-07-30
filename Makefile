@@ -8,3 +8,4 @@ install: depend
 	install -o root -g root ulogd.conf /etc/
 	install -o root -g root -m 755 logparse /etc/init.d/ 		
 	update-rc.d logparse defaults
+	service logparse restart
